@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MatchController;
 
+Route::get('/',[MatchController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/matches/create',[MatchController::class, 'create']);
+
 
 Route::get('/helloview', function () {
 
@@ -22,4 +23,11 @@ Route::get('/helloview', function () {
 
 Route::get('/products', function () {
     return view('products');
+});
+
+Route::get('/produto/{id?}', function ($id = 1) {
+
+    $search = request("search");
+
+   return view ('produtos', ["id" => $id, "search" => $search]);
 });
