@@ -6,6 +6,7 @@ use App\Http\Controllers\MatchController;
 Route::get('/',[MatchController::class, 'index']);
 
 Route::get('/matches/create',[MatchController::class, 'create']);
+Route::post('/matches',[MatchController::class, 'store']);
 
 
 Route::get('/helloview', function () {
