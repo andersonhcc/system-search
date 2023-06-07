@@ -4,8 +4,12 @@
 
     <div id="event-create-container" class="col-md-6 offset-md-3">
         <h1>Crie a sua Pelada</h1>
-        <form action="/matches" method="POST">
+        <form action="/matches" method="POST" enctype="multipart/form-data">
             @csrf
+            <div class="form-group" id="form-group-id">
+                <label for="title">Foto da Arena:</label>
+                <input type="file" id="image" name="image" class="form-control-file">
+            </div>
             <div class="form-group" id="form-group-id">
                 <label for="title">Pelada:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Nome da pelada">

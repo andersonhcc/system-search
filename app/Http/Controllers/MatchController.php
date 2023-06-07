@@ -31,10 +31,27 @@ class MatchController extends Controller
         $matche->private = $request->private;
         $matche->description = $request->description;
 
+        if($request->hasFile("image") && $request->file('image')->isValid()){
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $request->image->move(public_path("/img/matches"), $imageName );
+
+            $matche->image = $imageName;
+        }
+
         $matche->save();
+        return redirect('/')->with('msg', 'Pelada criada com sucesso!');
+    }
 
-        return redirect('/');
+    public function show($id){
 
+        $match= Matches::findOrFail($id);
+
+        return view('matches.show', ['match' => $match]);
 
     }
 }

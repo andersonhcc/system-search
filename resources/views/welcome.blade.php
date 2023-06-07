@@ -13,12 +13,12 @@
         <div id="cards-container" class="row">
             @foreach($matches as $match)
                 <div class="card col-md-3">
-                    <img src="/img/banner.jpg" alt="{{ $match->title }}">
+                    <img src="/img/matches/{{$match->image}}" alt="{{ $match->title }}">
                     <div class="card-body">
                         <p class="card-date">10/09/2020</p>
                         <h5 class="card-title">{{ $match->title }}</h5>
                         <p class="card-participants">X Participantes</p>
-                        <a href="#" class="btn btn-primary">Saber mais</a>
+                        <a href="/matches/{{$match->id}}" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
             @endforeach
