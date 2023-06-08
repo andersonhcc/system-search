@@ -30,6 +30,7 @@ class MatchController extends Controller
         $matche->city = $request->city;
         $matche->private = $request->private;
         $matche->description = $request->description;
+        $matche->items = $request->items;
 
         if($request->hasFile("image") && $request->file('image')->isValid()){
             $requestImage = $request->image;

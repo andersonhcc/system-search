@@ -12,6 +12,12 @@
                 <p class="events-participants"><ion-icon name="people-outline"></ion-icon> X Participantes</p>
                 <p class="event-owner"><ion-icon name="star-outline"></ion-icon> Dono do Evento</p>
                 <a href="#" class="btn btn-primary" id="event-submit">Confirmar Presença</a>
+                <h3>A pelada conta com:</h3>
+                <ul id="items-list">
+                    @foreach($match->items as $item)
+                        <li><span> - {{$item}}</span></li>
+                    @endforeach
+                </ul>
             </div>
             <div class="col-md-12" id="description-container">
                 <h3>Sobre a pelada:</h3>

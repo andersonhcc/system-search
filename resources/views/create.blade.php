@@ -31,6 +31,26 @@
                 <label for="title">Descrição:</label>
                 <textarea name="description" id="description" class="form-control" placeholder="Algo que você queira acrescentar?"></textarea>
             </div>
+            <div class="form-group">
+                <label for="title">Adicionar itens de infraestrutura:</label>
+                <div class="form-group">
+                    <input type="checkbox" name="items[]" value="SemPagamento"> Sem pagamento
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="items[]" value="Cerveja"> Cerveja grátis
+                </div>
+
+                <div class="form-group" >
+                    <input type="checkbox" name="items[]" value="Chuteira"> Chuteira grátis
+                </div>
+
+
+                <div class="form-group" >
+                    <input type="checkbox" name="items[]" value="Brindes"> Brindes
+                </div>
+
+                </div>
             <input type="submit" class="btn btn-primary" value="Criar Pelada" id="form-group-id">
         </form>
     </div>
