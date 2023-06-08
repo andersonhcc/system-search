@@ -8,9 +8,18 @@ use App\Models\Matches;
 class MatchController extends Controller
 {
     public function index(){
-      $matches = Matches::all();
 
-      return view('welcome', ['matches' => $matches]);
+        $search = request("search");
+
+        if($search){
+            $matches = Matches::where([
+                ['title', 'like','%'.$search.'%']
+            ])->get();
+        }else{
+            $matches = Matches::all();
+
+        }
+      return view('welcome', ['matches' => $matches, 'search' => $search]);
 
 
     }
@@ -27,6 +36,7 @@ class MatchController extends Controller
         $matche = new Matches;
 
         $matche->title = $request->title;
+        $matche->date = $request->date;
         $matche->city = $request->city;
         $matche->private = $request->private;
         $matche->description = $request->description;

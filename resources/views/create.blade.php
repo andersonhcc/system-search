@@ -14,6 +14,12 @@
                 <label for="title">Pelada:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Nome da pelada">
             </div>
+
+            <div class="form-group" id="form-group-id">
+                <label for="title">Data do evento:</label>
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+
             <div class="form-group" id="form-group-id">
 
             <label for="title">Cidade:</label>

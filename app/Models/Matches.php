@@ -12,4 +12,5 @@ class Matches extends Model
     protected $casts = [
         "items" => "array"
     ];
+    protected $dates = ["date"];
 }
