@@ -9,9 +9,19 @@
             <div id="info-container" class="col-md-6">
                 <h1>{{ $match->title }}</h1>
                 <p class="event-city"><ion-icon name="location-outline"></ion-icon> {{ $match->city }}</p>
-                <p class="events-participants"><ion-icon name="people-outline"></ion-icon> X Participantes</p>
-                <p class="event-owner"><ion-icon name="star-outline"></ion-icon> Dono do Evento</p>
-                <a href="#" class="btn btn-primary" id="event-submit">Confirmar Presença</a>
+                <p class="events-participants"><ion-icon name="people-outline"></ion-icon> {{count($match->users)}} Peladeiro</p>
+                <p class="event-owner"><ion-icon name="star-outline"></ion-icon>{{$matchOwner['name']}}</p>
+                @if(!$hasUserJoined)
+                    <form action="/matches/join/{{$match->id}}" method="POST">
+                        @csrf
+                        <a href="#" class="btn btn-primary" id="event-submit" onclick="event.preventDefault(); this.closest('form').submit();">
+                            Confirmar presença
+                        </a>
+                    </form>
+                @else
+                    <p class="already-joined-msg">Você já está participando dessa pelada!</p>
+                @endif
+
                 <h3>A pelada conta com:</h3>
                 <ul id="items-list">
                     @foreach($match->items as $item)

@@ -181,7 +181,25 @@ footer p {
     display: flex;
 }
 
+.dashboard-title-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-events-container th {
+    width: 25%;
+}
+
 #info-container h3,
+
+.dashboard-events-container form {
+    display: inline-block;
+}
+
+#description-container {
+    margin-top: 30px;
+}
+
 #description-container h3 {
     font-size: 20px;
     font-weight: bold;
@@ -195,4 +213,19 @@ footer p {
 
 #info-container #event-submit {
     margin: 20px 0;
+}
+
+
+.img-preview {
+    width: 100px;
+    margin-top: 20px;
+}
+
+#info-container .already-joined-msg{
+    margin: 15px 0;
+    color: #004085;
+    background-color: #CCE5FF;
+    border: 1px solid #B8DAFF;
+    padding: 10px;
+    width: 275px;
 }
